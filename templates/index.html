@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduGenie — AI Learning Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <span class="badge">AI Learning Assistant</span>
+      <h1>EduGenie</h1>
+      <p>Ask questions, simplify concepts, generate quizzes, summarize notes, and build a learning path.</p>
+    </header>
+
+    <section class="card">
+      <div class="form-grid">
+        <label for="task">Task</label>
+        <select id="task">
+          <option value="qa">Ask a Question</option>
+          <option value="explain">Explain a Concept</option>
+          <option value="quiz">Generate Quiz</option>
+          <option value="summarize">Summarize</option>
+          <option value="learn">Learning Path</option>
+        </select>
+
+        <label for="inputText">Your input</label>
+        <textarea id="inputText" rows="10" placeholder="Example: Explain the Pythagoras theorem to a beginner."></textarea>
+
+        <button id="submitBtn">Generate</button>
+      </div>
+    </section>
+
+    <section id="status" class="status" aria-live="polite"></section>
+    <section id="result" class="card result hidden"></section>
+  </main>
+  <script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>
